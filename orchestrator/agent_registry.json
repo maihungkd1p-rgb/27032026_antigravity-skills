@@ -1,0 +1,137 @@
+{
+  "orchestrator": {
+    "version": "2.0",
+    "updated": "2026-03-21",
+    "description": "Agent Registry — Toàn bộ phòng ban KinhMatAnna DataHub",
+    "total_agents": 8,
+    "how_to_add": "Thêm entry mới vào 'agents' với đầy đủ fields. Set status='draft' nếu chưa có data."
+  },
+  "agents": {
+    "sales_analyst": {
+      "department_id": "sales",
+      "status": "active",
+      "name": "Sales Analyst",
+      "domain": "Kinh doanh / Doanh thu",
+      "trigger_keywords": ["doanh thu", "revenue", "KPI", "chỉ tiêu", "doanh số", "top seller", "conversion", "ASM", "AM", "cửa hàng", "bán hàng", "target"],
+      "skills": ["business-data-analyst", "dashboard-architect", "xlsx-official"],
+      "workflows": ["bao-cao-ngay", "Asm-ngay", "daily-business-analysis"],
+      "knowledge_sources": ["am_mapping", "store_kpi"],
+      "output_format": "executive_summary",
+      "max_output_tokens": 500
+    },
+    "operations_agent": {
+      "department_id": "ops",
+      "status": "active",
+      "name": "Operations Agent",
+      "domain": "Vận hành / DPV / Kho",
+      "trigger_keywords": ["DPV", "điểm phục vụ", "tồn kho", "inventory", "vận hành", "quy trình", "SOP", "phục vụ", "kho", "nhập hàng", "xuất hàng"],
+      "skills": ["data-storytelling", "xlsx-official", "business-data-analyst"],
+      "workflows": ["bao-cao-diem-phuc-vu"],
+      "knowledge_sources": ["dpv_scoring", "store_operations"],
+      "output_format": "detailed_report",
+      "max_output_tokens": 500
+    },
+    "marketing_analyst": {
+      "department_id": "mkt",
+      "status": "active",
+      "name": "Marketing Analyst",
+      "domain": "Marketing / Chiến dịch",
+      "trigger_keywords": ["marketing", "MKT", "chiến dịch", "campaign", "quảng cáo", "ads", "social", "content", "reach", "engagement", "branding", "promotion"],
+      "skills": ["market-researcher", "analytics-tracking", "dashboard-architect", "social-scraper"],
+      "workflows": [],
+      "knowledge_sources": ["campaign_history"],
+      "output_format": "executive_summary",
+      "max_output_tokens": 500
+    },
+    "hr_agent": {
+      "department_id": "hr",
+      "status": "draft",
+      "name": "HR Agent",
+      "domain": "Nhân sự / Đào tạo / Tuyển dụng",
+      "trigger_keywords": ["nhân sự", "HR", "tuyển dụng", "lương", "đào tạo", "training", "nhân viên", "staff", "KPI nhân sự", "nghỉ việc", "turnover", "onboarding"],
+      "skills": ["xlsx-official", "docx-official", "business-data-analyst"],
+      "workflows": [],
+      "knowledge_sources": ["vietnam_labor_law"],
+      "output_format": "detailed_report",
+      "max_output_tokens": 500,
+      "draft_note": "Cần bổ sung: data nhân sự Excel, KPI nhân viên, bảng lương template"
+    },
+    "finance_agent": {
+      "department_id": "finance",
+      "status": "draft",
+      "name": "Finance Agent",
+      "domain": "Tài chính / Chi phí / P&L",
+      "trigger_keywords": ["tài chính", "finance", "chi phí", "cost", "lợi nhuận", "profit", "P&L", "dự toán", "budget", "ROI", "dòng tiền", "cashflow"],
+      "skills": ["business-data-analyst", "xlsx-official", "dashboard-architect"],
+      "workflows": [],
+      "knowledge_sources": ["matbang_tai_chinh"],
+      "output_format": "executive_summary",
+      "max_output_tokens": 500,
+      "draft_note": "Cần bổ sung: báo cáo P&L hàng tháng, data chi phí vận hành"
+    },
+    "customer_agent": {
+      "department_id": "cskh",
+      "status": "draft",
+      "name": "Customer Agent",
+      "domain": "CSKH / Reviews / Phản hồi khách hàng",
+      "trigger_keywords": ["khách hàng", "customer", "review", "phản hồi", "feedback", "khiếu nại", "complaint", "NPS", "hài lòng", "Google Maps", "đánh giá"],
+      "skills": ["social-scraper", "data-storytelling", "business-data-analyst"],
+      "workflows": [],
+      "knowledge_sources": ["google_maps_reviews"],
+      "output_format": "detailed_report",
+      "max_output_tokens": 500,
+      "draft_note": "Cần bổ sung: data Google Maps reviews, log CSKH"
+    },
+    "property_agent": {
+      "department_id": "property",
+      "status": "active",
+      "name": "Property Agent",
+      "domain": "Mặt bằng / Hợp đồng / Mở cửa hàng",
+      "trigger_keywords": ["mặt bằng", "thuê", "hợp đồng", "mở cửa hàng", "property", "location", "mặt tiền", "diện tích", "dự toán đầu tư", "tiêu chuẩn"],
+      "skills": ["docx-official", "xlsx-official", "business-data-analyst"],
+      "workflows": [],
+      "knowledge_sources": ["matbang_hop_dong", "matbang_kinh_doanh", "matbang_tai_chinh", "matbang_tieu_chuan"],
+      "output_format": "detailed_report",
+      "max_output_tokens": 600
+    },
+    "report_generator": {
+      "department_id": "reporting",
+      "status": "active",
+      "name": "Report Generator",
+      "domain": "Báo cáo / Tài liệu / Trình bày",
+      "trigger_keywords": ["báo cáo", "report", "slide", "tài liệu", "document", "trình bày", "presentation", "tuần", "tháng", "executive summary"],
+      "skills": ["docx-official", "data-storytelling", "dashboard-architect"],
+      "workflows": ["bc_hangtuan", "data-storytelling"],
+      "knowledge_sources": [],
+      "output_format": "formatted_document",
+      "max_output_tokens": 1000
+    }
+  },
+  "utility_agents": {
+    "research_agent": {
+      "department_id": "research",
+      "status": "active",
+      "name": "Research Agent",
+      "domain": "Nghiên cứu / Thị trường / Đối thủ",
+      "trigger_keywords": ["nghiên cứu", "research", "đối thủ", "competitor", "thị trường", "market", "xu hướng", "trend", "benchmark"],
+      "skills": ["firecrawl-scraper", "market-researcher", "social-scraper"],
+      "workflows": ["deep-research"],
+      "knowledge_sources": [],
+      "output_format": "research_brief",
+      "max_output_tokens": 800
+    }
+  },
+  "routing_rules": {
+    "single_domain": "Route trực tiếp đến agent phù hợp nhất dựa trên trigger_keywords",
+    "multi_domain": "Orchestrator phân tách task → gán cho nhiều agents → chạy song song",
+    "ambiguous": "Hỏi user để làm rõ domain trước khi route",
+    "fallback": "Nếu không match agent nào → xử lý trực tiếp không qua orchestration",
+    "draft_agent": "Nếu agent có status=draft → cảnh báo user data chưa đủ, vẫn xử lý với data có sẵn"
+  },
+  "quality_gates": {
+    "data_consistency": "Cross-check số liệu giữa các agents (VD: tổng doanh thu phải khớp)",
+    "classification_check": "Không output data Confidential 🔴 (Rule #12)",
+    "format_check": "Output phải có Executive Summary + Recommendations",
+    "draft_warning": "Output từ draft agents phải có disclaimer về data coverage"
+  }
+}

@@ -1,0 +1,35 @@
+{
+    "id": "[ki_id]",
+    "title": "[Tiêu đề Knowledge Item]",
+    "summary": "[Mô tả ngắn về nội dung và mục đích]",
+    "category": "[category]",
+    "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+    ],
+    "created_at": "[ISO timestamp: 2026-01-01T00:00:00+07:00]",
+    "updated_at": "[ISO timestamp]",
+    "sources": [
+        "path/to/source1.docx",
+        "path/to/source2.pdf"
+    ],
+    "artifacts": [
+        "artifacts/overview.md",
+        "artifacts/section_1.md",
+        "artifacts/section_2.md",
+        "artifacts/qa_pairs.md"
+    ],
+    "chunking_notes": {
+        "strategy": "semantic_split | chapter_based | topic_cluster",
+        "large_files_split": [
+            "file_name → N sections"
+        ],
+        "avg_chunk_size": "~XKB",
+        "has_frontmatter": true
+    },
+    "cross_references": [
+        "related_ki_1",
+        "related_ki_2"
+    ]
+}

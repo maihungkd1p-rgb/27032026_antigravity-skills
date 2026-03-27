@@ -1,0 +1,23 @@
+{
+    "skill_name": "Memory",
+    "evals": [
+        {
+            "id": 1,
+            "type": "should-trigger",
+            "prompt": "Agent của tôi dạo này tư vấn chán quá, lúc đầu khách bảo thích nhẹ nhàng xong lát sau nó lại tư vấn phong cách năng động. Làm sao để nó nhớ dài hạn tính cách khách hàng?",
+            "expected_output": "Agent nhận diện vấn đề Catastrophic Forgetting/RAG limitation. Đề xuất sử dụng Hindsight (phân tách Opinion/Belief với Confidence) và áp dụng R3 (Retain, Recall, Reflect) vào System Prompt."
+        },
+        {
+            "id": 2,
+            "type": "should-trigger",
+            "prompt": "Anh định thiết kế hệ thống AI Agent cho phòng Sales, em tư vấn giúp anh kiến trúc tổ chức bộ nhớ nhé. Bọn này cứ hỏi xong quên.",
+            "expected_output": "Agent đề xuất mô hình Hybrid: Nested Learning cho Backbone (học liên tục) và Hindsight cho Memory Layer (giao tiếp minh bạch). Có nhắc đến cấu trúc 4 layer (World, Experience, Observation, Opinion)."
+        },
+        {
+            "id": 3,
+            "type": "should-NOT-trigger",
+            "prompt": "Tóm tắt file báo cáo doanh thu ngày hôm nay giúp anh",
+            "expected_output": "Agent tóm tắt dữ liệu mà không nhắc đến kiến trúc Hindsight hay Nested Learning vì đây chỉ là Single-shot QA."
+        }
+    ]
+}
