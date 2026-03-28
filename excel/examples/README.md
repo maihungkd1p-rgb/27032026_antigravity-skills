@@ -1,11 +1,11 @@
-# Excel Professional Examples
+# Excel Skill — Examples
 
-Các ví dụ sử dụng skill `excel-professional`.
+Các ví dụ sử dụng skill `excel` với class `ExcelBuilder` từ `scripts/excel_builder.py`.
 
 ## Ví dụ 1: Bảng kế hoạch năm
 
 ```python
-from excel_template import ExcelBuilder
+from excel_builder import ExcelBuilder
 
 # Khởi tạo
 builder = ExcelBuilder("KẾ HOẠCH CHUYỂN ĐỔI SỐ 2026")
@@ -27,13 +27,13 @@ builder.add_timeline_row("2.2", "Đào tạo nhân sự", [6, 7, 8, 9])
 # Cấu hình
 builder.set_column_widths({1: 6, 2: 50})
 builder.freeze_panes("C3")
-builder.save("ke_hoach_2026.xlsx")
+builder.save("03_Outputs/ke_hoach_2026.xlsx")
 ```
 
 ## Ví dụ 2: Báo cáo nhiều sheet
 
 ```python
-from excel_template import ExcelBuilder
+from excel_builder import ExcelBuilder
 
 builder = ExcelBuilder("BÁO CÁO TỔNG HỢP Q1")
 
@@ -53,13 +53,13 @@ builder.add_data_rows([
     ["Sản phẩm B", 170, "Giảm 5%"],
 ])
 
-builder.save("bao_cao_q1.xlsx")
+builder.save("03_Outputs/bao_cao_q1.xlsx")
 ```
 
 ## Ví dụ 3: Sử dụng Utility Functions
 
 ```python
-from excel_template import create_timeline_excel, create_summary_excel
+from excel_builder import create_timeline_excel, create_summary_excel
 
 # Tạo timeline nhanh
 data = [
@@ -74,7 +74,7 @@ data = [
 create_timeline_excel(
     "TIMELINE DỰ ÁN ABC",
     data,
-    output_path="timeline_abc.xlsx"
+    output_path="03_Outputs/timeline_abc.xlsx"
 )
 
 # Tạo bảng tổng hợp nhanh
@@ -88,15 +88,15 @@ summary = [
 create_summary_excel(
     "TIẾN ĐỘ DỰ ÁN",
     summary,
-    output_path="tien_do.xlsx"
+    output_path="03_Outputs/tien_do.xlsx"
 )
 ```
 
 ## Ví dụ 4: Custom Styling
 
 ```python
-from excel_template import ExcelBuilder, ExcelStyles
-from openpyxl.styles import Font, PatternFill
+from excel_builder import ExcelBuilder, ExcelStyles
+from openpyxl.styles import Font
 
 builder = ExcelBuilder("BÁO CÁO TÌNH TRẠNG")
 builder.add_header_row(["Hạng mục", "Trạng thái", "Ghi chú"])
@@ -130,5 +130,5 @@ for task, status, note in data:
     builder.current_row += 1
 
 builder.set_column_widths({1: 30, 2: 15, 3: 30})
-builder.save("tinh_trang.xlsx")
+builder.save("03_Outputs/tinh_trang.xlsx")
 ```
